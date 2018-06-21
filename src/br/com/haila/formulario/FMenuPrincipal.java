@@ -3,21 +3,21 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package br.com.kalina.formulario;
+package br.com.haila.formulario;
 
-import br.com.kalina.objeto.CadastrarAtestado;
-import br.com.kalina.objeto.Triagem;
+import br.com.haila.objeto.CadastrarAtestado;
+import br.com.haila.objeto.Triagem;
 
 /**
  *
  * @author SATC
  */
-public class MenuPrincipal extends javax.swing.JFrame {
+public class FMenuPrincipal extends javax.swing.JFrame {
 
     /**
      * Creates new form MenuPrincipal
      */
-    public MenuPrincipal() {
+    public FMenuPrincipal() {
         initComponents();
     }
 
@@ -37,7 +37,6 @@ public class MenuPrincipal extends javax.swing.JFrame {
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu3 = new javax.swing.JMenu();
         jMenu2 = new javax.swing.JMenu();
-        jMCadastrarPessoa = new javax.swing.JMenuItem();
         jMTriagem = new javax.swing.JMenuItem();
         jMAtestado = new javax.swing.JMenuItem();
         jMMedico = new javax.swing.JMenuItem();
@@ -61,14 +60,6 @@ public class MenuPrincipal extends javax.swing.JFrame {
         jMenu2.setText("Cadastrar");
         jMenu2.setToolTipText("");
         jMenu2.setActionCommand("Cadastrar \nPessoa\n");
-
-        jMCadastrarPessoa.setText("Cadastrar Pessoa");
-        jMCadastrarPessoa.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMCadastrarPessoaActionPerformed(evt);
-            }
-        });
-        jMenu2.add(jMCadastrarPessoa);
 
         jMTriagem.setText("Triagem");
         jMTriagem.addActionListener(new java.awt.event.ActionListener() {
@@ -111,6 +102,11 @@ public class MenuPrincipal extends javax.swing.JFrame {
         jMenu2.add(jMEnfermeira);
 
         jMPaciente.setText("Paciente");
+        jMPaciente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMPacienteActionPerformed(evt);
+            }
+        });
         jMenu2.add(jMPaciente);
 
         jMenuBar1.add(jMenu2);
@@ -121,7 +117,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 414, Short.MAX_VALUE)
+            .addGap(0, 467, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -131,40 +127,47 @@ public class MenuPrincipal extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jMCadastrarPessoaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMCadastrarPessoaActionPerformed
-        // TODO add your handling code here:
-        CadastroPessoa cadastroPessoa= new CadastroPessoa();
-        cadastroPessoa.setVisible(true);
-    }//GEN-LAST:event_jMCadastrarPessoaActionPerformed
-
     private void jMTriagemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMTriagemActionPerformed
-        // TODO add your handling code here:        Triagem triagem = new Triagem();
-      
+        FTriagem triagem = new FTriagem();
+        triagem.setVisible(true);
+
+// TODO add your handling code here:        Triagem triagem = new Triagem();
+
     }//GEN-LAST:event_jMTriagemActionPerformed
 
     private void jMAtestadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMAtestadoActionPerformed
         // TODO add your handling code here:
-        Atestado atestado=new Atestado();
+        FAtestado atestado = new FAtestado();
         atestado.setVisible(true);
-        
+
     }//GEN-LAST:event_jMAtestadoActionPerformed
 
     private void jMEnfermeiraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMEnfermeiraActionPerformed
         // TODO add your handling code here:
-        Enfermeira consultarEnfermeira=new Enfermeira();
+        FEnfermeira consultarEnfermeira = new FEnfermeira();
         consultarEnfermeira.setVisible(true);
     }//GEN-LAST:event_jMEnfermeiraActionPerformed
 
     private void jMMedicoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMMedicoActionPerformed
         // TODO add your handling code here:
-        Medico medico=new Medico();
+        FMedico medico = new FMedico();
         medico.setVisible(true);
     }//GEN-LAST:event_jMMedicoActionPerformed
 
     private void jMConsultaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMConsultaActionPerformed
-        // TODO add your handling code here:
-       
+        FConsulta consulta = new FConsulta();
+        consulta.setVisible(true);
+
+// TODO add your handling code here:
+
     }//GEN-LAST:event_jMConsultaActionPerformed
+
+    private void jMPacienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMPacienteActionPerformed
+        FPaciente paciente = new FPaciente();
+        paciente.setVisible(true);
+
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jMPacienteActionPerformed
 
     /**
      * @param args the command line arguments
@@ -183,27 +186,29 @@ public class MenuPrincipal extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(MenuPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FMenuPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(MenuPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FMenuPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(MenuPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FMenuPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(MenuPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FMenuPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new MenuPrincipal().setVisible(true);
+                new FMenuPrincipal().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenuItem jMAtestado;
-    private javax.swing.JMenuItem jMCadastrarPessoa;
     private javax.swing.JMenuItem jMConsulta;
     private javax.swing.JMenuItem jMEnfermeira;
     private javax.swing.JMenuItem jMMedico;

@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package br.com.kalina.objeto;
+package br.com.haila.objeto;
 
 /**
  *
@@ -19,8 +19,7 @@ public class Paciente {
         this.numeroSus = numeroSus;
         this.responsavel = responsavel;
     }
-    
-    
+
 
     public int getId() {
         return id;
